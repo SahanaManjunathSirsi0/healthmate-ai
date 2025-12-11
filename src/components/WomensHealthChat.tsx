@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { ArrowLeft, Send, Loader2, Flower2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,16 +22,22 @@ interface WomensHealthChatProps {
   initialTopic?: string | null;
 }
 
-const topicPrompts: Record<string, string> = {
-  menstrual: "I'd like to discuss my menstrual health. ",
-  pcos: "I have concerns about PCOS symptoms. ",
-  skin: "I'm experiencing hormonal skin issues. ",
-  wellness: "I'd like general wellness guidance. ",
-};
-
 const WomensHealthChat = ({ onBack, initialTopic }: WomensHealthChatProps) => {
+  const { t } = useTranslation();
+  
+  const getTopicPrompt = (topic: string | null | undefined): string => {
+    if (!topic) return "";
+    const prompts: Record<string, string> = {
+      menstrual: t("women.topicPrompts.menstrual"),
+      pcos: t("women.topicPrompts.pcos"),
+      skin: t("women.topicPrompts.skin"),
+      wellness: t("women.topicPrompts.wellness"),
+    };
+    return prompts[topic] || "";
+  };
+
   const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState(initialTopic ? topicPrompts[initialTopic] || "" : "");
+  const [input, setInput] = useState(getTopicPrompt(initialTopic));
   const [isLoading, setIsLoading] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [language, setLanguage] = useState("English");
@@ -112,8 +119,8 @@ const WomensHealthChat = ({ onBack, initialTopic }: WomensHealthChatProps) => {
               <Flower2 className="w-4 h-4 text-white" />
             </div>
             <div>
-              <h2 className="font-semibold text-foreground">Women's Health Assistant</h2>
-              <p className="text-xs text-muted-foreground">Here to support you</p>
+              <h2 className="font-semibold text-foreground">{t("women.chat.title")}</h2>
+              <p className="text-xs text-muted-foreground">{t("women.chat.subtitle")}</p>
             </div>
           </div>
         </div>
@@ -127,16 +134,15 @@ const WomensHealthChat = ({ onBack, initialTopic }: WomensHealthChatProps) => {
             <div className="w-20 h-20 rounded-full bg-gradient-women flex items-center justify-center mx-auto mb-6 shadow-women">
               <Flower2 className="w-10 h-10 text-white" />
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-2">Welcome to Women's Health</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-2">{t("women.chat.welcomeTitle")}</h3>
             <p className="text-muted-foreground max-w-md mx-auto mb-6">
-              Share your concerns about menstrual health, PCOS, hormonal skin issues, or general wellness. 
-              I'm here to provide supportive, judgment-free guidance.
+              {t("women.chat.welcomeDescription")}
             </p>
             <div className="max-w-lg mx-auto">
               <AlertCard 
                 type="info"
-                title="Safe Space"
-                message="Your privacy matters. This conversation stays between us, and I'm here to help without judgment."
+                title={t("women.alerts.safeSpace.title")}
+                message={t("women.alerts.safeSpace.message")}
               />
             </div>
           </div>
@@ -153,7 +159,7 @@ const WomensHealthChat = ({ onBack, initialTopic }: WomensHealthChatProps) => {
         {isLoading && (
           <div className="flex items-center gap-2 text-muted-foreground">
             <Loader2 className="w-4 h-4 animate-spin" />
-            <span className="text-sm">Thinking...</span>
+            <span className="text-sm">{t("women.chat.thinking")}</span>
           </div>
         )}
 
@@ -183,7 +189,7 @@ const WomensHealthChat = ({ onBack, initialTopic }: WomensHealthChatProps) => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Describe your symptoms or concerns..."
+              placeholder={t("women.chat.placeholder")}
               className="resize-none border-women-rose-light/30 focus:border-women-rose/50 focus:ring-women-rose/30 rounded-2xl min-h-[48px] max-h-32"
               rows={1}
             />

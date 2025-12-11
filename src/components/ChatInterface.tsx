@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { ArrowLeft, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -20,10 +21,11 @@ interface ChatInterfaceProps {
 }
 
 const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
+  const { t } = useTranslation();
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hello! I'm HealthMate AI, your healthcare companion. I can help you understand symptoms and provide guidance. Please note: I'm not a doctor, and this is not a medical diagnosis. How can I assist you today?",
+      content: t("chat.welcomeMessage"),
     },
   ]);
   const [input, setInput] = useState("");
@@ -87,7 +89,7 @@ const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
         ...prev,
         {
           role: "assistant",
-          content: "I apologize, but I encountered an error. Please try again or rephrase your question.",
+          content: t("chat.errorMessage"),
         },
       ]);
     } finally {
@@ -113,8 +115,8 @@ const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
             <ArrowLeft className="h-5 w-5" />
           </Button>
           <div>
-            <h2 className="font-semibold text-foreground">HealthMate Chat</h2>
-            <p className="text-xs text-muted-foreground">AI Health Assistant</p>
+            <h2 className="font-semibold text-foreground">{t("chat.title")}</h2>
+            <p className="text-xs text-muted-foreground">{t("chat.subtitle")}</p>
           </div>
         </div>
         <LanguageSelector value={language} onChange={setLanguage} />
@@ -128,7 +130,7 @@ const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
         {isLoading && (
           <div className="flex items-center gap-2 text-muted-foreground">
             <Loader2 className="h-4 w-4 animate-spin" />
-            <span className="text-sm">HealthMate is thinking...</span>
+            <span className="text-sm">{t("chat.thinking")}</span>
           </div>
         )}
         <div ref={messagesEndRef} />
@@ -166,7 +168,7 @@ const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
                   handleSend();
                 }
               }}
-              placeholder="Describe your symptoms..."
+              placeholder={t("chat.placeholder")}
               className="flex-1 min-h-[44px] max-h-32 resize-none"
               disabled={isLoading}
             />
@@ -179,7 +181,7 @@ const ChatInterface = ({ onBack }: ChatInterfaceProps) => {
             </Button>
           </div>
           <p className="text-xs text-muted-foreground text-center">
-            Remember: This is not medical advice. Always consult a healthcare professional for serious concerns.
+            {t("chat.disclaimer")}
           </p>
         </div>
       </div>

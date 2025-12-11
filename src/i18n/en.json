@@ -1,0 +1,134 @@
+{
+  "header": {
+    "title": "HealthMate AI",
+    "subtitle": "Your Healthcare Companion",
+    "startChat": "Start Chat",
+    "womensHealth": "Women's Health"
+  },
+  "hero": {
+    "title": "Your Personal",
+    "titleHighlight": "Healthcare Assistant",
+    "description": "Get instant health guidance through text, voice, or images. Available in multiple languages with empathetic AI support.",
+    "cta": "Start Your Health Consultation"
+  },
+  "features": {
+    "multiLanguage": {
+      "title": "Multi-Language Support",
+      "description": "Communicate in your preferred language - English, Hindi, Kannada, Telugu, Tamil, Malayalam, Marathi, and more."
+    },
+    "imageAnalysis": {
+      "title": "Image Analysis",
+      "description": "Upload photos of symptoms for visual assessment. We analyze rashes, swelling, wounds, and more."
+    },
+    "voiceInput": {
+      "title": "Voice Input",
+      "description": "Describe your symptoms using voice. Our AI understands and responds naturally."
+    }
+  },
+  "womensHealthPromo": {
+    "title": "Women's Health Assistant",
+    "description": "Specialized support for menstrual health, PCOS, hormonal skin care, and wellness. A safe, supportive space designed just for you.",
+    "cta": "Explore Now"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "steps": {
+      "describe": { "title": "Describe", "desc": "Share your symptoms via text, voice, or image" },
+      "analyze": { "title": "Analyze", "desc": "AI examines your input and asks relevant questions" },
+      "guidance": { "title": "Guidance", "desc": "Receive possible causes and safe home-care tips" },
+      "action": { "title": "Action", "desc": "Get advice on when to seek professional help" }
+    }
+  },
+  "disclaimer": {
+    "title": "Important Disclaimer",
+    "text": "HealthMate AI is a support tool, not a medical professional. We provide general health information and guidance, but we do not diagnose, prescribe medications, or replace professional medical advice.",
+    "highlight": "Always consult a healthcare provider for serious symptoms or emergencies."
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "description": "Start your health consultation now. Our AI assistant is available 24/7 to help you.",
+    "button": "Begin Consultation Now"
+  },
+  "footer": {
+    "copyright": "© 2024 HealthMate AI. For informational purposes only. Not a substitute for professional medical advice."
+  },
+  "chat": {
+    "title": "HealthMate Chat",
+    "subtitle": "AI Health Assistant",
+    "placeholder": "Describe your symptoms...",
+    "thinking": "HealthMate is thinking...",
+    "disclaimer": "Remember: This is not medical advice. Always consult a healthcare professional for serious concerns.",
+    "welcomeMessage": "Hello! I'm HealthMate AI, your healthcare companion. I can help you understand symptoms and provide guidance. Please note: I'm not a doctor, and this is not a medical diagnosis. How can I assist you today?",
+    "errorMessage": "I apologize, but I encountered an error. Please try again or rephrase your question."
+  },
+  "women": {
+    "header": {
+      "title": "Women's Health",
+      "subtitle": "Your Wellness Companion"
+    },
+    "hero": {
+      "title": "Caring for",
+      "titleHighlight": "Your Well-being",
+      "description": "Get personalized guidance on menstrual health, PCOS, hormonal skin care, and overall wellness. We're here to support you every step of the way."
+    },
+    "topics": {
+      "menstrual": {
+        "title": "Menstrual Health",
+        "description": "Track cycles, understand symptoms, and get personalized insights about your period health."
+      },
+      "pcos": {
+        "title": "PCOS Support",
+        "description": "Understand PCOS indicators, manage symptoms, and get lifestyle recommendations."
+      },
+      "skin": {
+        "title": "Hormonal Skin Care",
+        "description": "Address acne, dryness, and other skin issues related to hormonal changes."
+      },
+      "wellness": {
+        "title": "General Wellness",
+        "description": "Nutrition, exercise, mental health, and holistic well-being guidance."
+      }
+    },
+    "alerts": {
+      "info": {
+        "title": "We're Here for You",
+        "message": "This assistant provides general wellness guidance. For serious symptoms, always consult a healthcare professional."
+      },
+      "warning": {
+        "title": "When to Seek Immediate Help",
+        "message": "Severe abdominal pain, heavy bleeding, fainting, high fever, or sudden vision changes require immediate medical attention. Don't wait – visit a doctor or emergency room."
+      },
+      "safeSpace": {
+        "title": "Safe Space",
+        "message": "Your privacy matters. This conversation stays between us, and I'm here to help without judgment."
+      }
+    },
+    "cta": {
+      "title": "Ready to Talk?",
+      "description": "Share your concerns in your own words. Our AI assistant provides supportive, judgment-free guidance tailored to your needs.",
+      "button": "Begin Your Consultation"
+    },
+    "chat": {
+      "title": "Women's Health Assistant",
+      "subtitle": "Here to support you",
+      "welcomeTitle": "Welcome to Women's Health",
+      "welcomeDescription": "Share your concerns about menstrual health, PCOS, hormonal skin issues, or general wellness. I'm here to provide supportive, judgment-free guidance.",
+      "placeholder": "Describe your symptoms or concerns...",
+      "thinking": "Thinking..."
+    },
+    "footer": {
+      "copyright": "© 2024 HealthMate AI - Women's Health. For informational purposes only. Not a substitute for professional medical advice."
+    },
+    "topicPrompts": {
+      "menstrual": "I'd like to discuss my menstrual health. ",
+      "pcos": "I have concerns about PCOS symptoms. ",
+      "skin": "I'm experiencing hormonal skin issues. ",
+      "wellness": "I'd like general wellness guidance. "
+    }
+  },
+  "language": {
+    "en": "EN",
+    "kn": "KN",
+    "hi": "HI"
+  }
+}

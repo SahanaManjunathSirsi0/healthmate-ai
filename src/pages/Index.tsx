@@ -1,11 +1,21 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Heart, MessageCircle, Image as ImageIcon, Mic, Shield, Clock, Flower2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import ChatInterface from "@/components/ChatInterface";
+import AppLanguageSelector from "@/components/AppLanguageSelector";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const [showChat, setShowChat] = useState(false);
+  const { t } = useTranslation();
+
+  const howItWorksSteps = [
+    { step: "1", title: t("howItWorks.steps.describe.title"), desc: t("howItWorks.steps.describe.desc") },
+    { step: "2", title: t("howItWorks.steps.analyze.title"), desc: t("howItWorks.steps.analyze.desc") },
+    { step: "3", title: t("howItWorks.steps.guidance.title"), desc: t("howItWorks.steps.guidance.desc") },
+    { step: "4", title: t("howItWorks.steps.action.title"), desc: t("howItWorks.steps.action.desc") },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
@@ -17,22 +27,23 @@ const Index = () => {
               <Heart className="w-5 h-5 text-white" fill="white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">HealthMate AI</h1>
-              <p className="text-xs text-muted-foreground">Your Healthcare Companion</p>
+              <h1 className="text-xl font-bold text-foreground">{t("header.title")}</h1>
+              <p className="text-xs text-muted-foreground">{t("header.subtitle")}</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
+            <AppLanguageSelector />
             <Link to="/womens-health">
               <Button variant="outline" className="border-women-rose/30 text-women-rose hover:bg-women-rose/10">
                 <Flower2 className="w-4 h-4 mr-2" />
-                Women's Health
+                {t("header.womensHealth")}
               </Button>
             </Link>
             <Button 
               onClick={() => setShowChat(true)}
               className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-md"
             >
-              Start Chat
+              {t("header.startChat")}
             </Button>
           </div>
         </div>
@@ -48,10 +59,10 @@ const Index = () => {
               </div>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-              Your Personal <span className="text-transparent bg-clip-text bg-gradient-hero">Healthcare Assistant</span>
+              {t("hero.title")} <span className="text-transparent bg-clip-text bg-gradient-hero">{t("hero.titleHighlight")}</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Get instant health guidance through text, voice, or images. Available in multiple languages with empathetic AI support.
+              {t("hero.description")}
             </p>
             <Button 
               onClick={() => setShowChat(true)}
@@ -59,7 +70,7 @@ const Index = () => {
               className="bg-gradient-primary hover:opacity-90 transition-all shadow-lg hover:shadow-glow text-lg px-8 py-6 h-auto"
             >
               <MessageCircle className="mr-2 h-5 w-5" />
-              Start Your Health Consultation
+              {t("hero.cta")}
             </Button>
           </section>
 
@@ -69,9 +80,9 @@ const Index = () => {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <MessageCircle className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Multi-Language Support</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-2">{t("features.multiLanguage.title")}</h3>
               <p className="text-muted-foreground">
-                Communicate in your preferred language - English, Hindi, Kannada, Telugu, Tamil, Malayalam, Marathi, and more.
+                {t("features.multiLanguage.description")}
               </p>
             </div>
 
@@ -79,9 +90,9 @@ const Index = () => {
               <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
                 <ImageIcon className="w-6 h-6 text-secondary" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Image Analysis</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-2">{t("features.imageAnalysis.title")}</h3>
               <p className="text-muted-foreground">
-                Upload photos of symptoms for visual assessment. We analyze rashes, swelling, wounds, and more.
+                {t("features.imageAnalysis.description")}
               </p>
             </div>
 
@@ -89,9 +100,9 @@ const Index = () => {
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
                 <Mic className="w-6 h-6 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Voice Input</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-2">{t("features.voiceInput.title")}</h3>
               <p className="text-muted-foreground">
-                Describe your symptoms using voice. Our AI understands and responds naturally.
+                {t("features.voiceInput.description")}
               </p>
             </div>
           </section>
@@ -105,14 +116,13 @@ const Index = () => {
                     <Flower2 className="w-10 h-10 text-white" />
                   </div>
                   <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-2">Women's Health Assistant</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2">{t("womensHealthPromo.title")}</h3>
                     <p className="text-white/90 max-w-2xl">
-                      Specialized support for menstrual health, PCOS, hormonal skin care, and wellness. 
-                      A safe, supportive space designed just for you.
+                      {t("womensHealthPromo.description")}
                     </p>
                   </div>
                   <Button className="bg-white text-women-rose hover:bg-white/90 shadow-lg">
-                    Explore Now
+                    {t("womensHealthPromo.cta")}
                   </Button>
                 </div>
               </div>
@@ -121,14 +131,9 @@ const Index = () => {
 
           {/* How It Works */}
           <section className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-foreground mb-8">How It Works</h3>
+            <h3 className="text-3xl font-bold text-center text-foreground mb-8">{t("howItWorks.title")}</h3>
             <div className="grid md:grid-cols-4 gap-6">
-              {[
-                { step: "1", title: "Describe", desc: "Share your symptoms via text, voice, or image" },
-                { step: "2", title: "Analyze", desc: "AI examines your input and asks relevant questions" },
-                { step: "3", title: "Guidance", desc: "Receive possible causes and safe home-care tips" },
-                { step: "4", title: "Action", desc: "Get advice on when to seek professional help" },
-              ].map((item, idx) => (
+              {howItWorksSteps.map((item, idx) => (
                 <div key={idx} className="text-center">
                   <div className="w-16 h-16 rounded-full bg-gradient-primary text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-md">
                     {item.step}
@@ -147,10 +152,10 @@ const Index = () => {
                 <Shield className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">Important Disclaimer</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">{t("disclaimer.title")}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  HealthMate AI is a support tool, not a medical professional. We provide general health information and guidance, but we do not diagnose, prescribe medications, or replace professional medical advice. 
-                  <span className="text-accent font-medium"> Always consult a healthcare provider for serious symptoms or emergencies.</span>
+                  {t("disclaimer.text")}
+                  <span className="text-accent font-medium"> {t("disclaimer.highlight")}</span>
                 </p>
               </div>
             </div>
@@ -159,9 +164,9 @@ const Index = () => {
           {/* CTA */}
           <section className="text-center">
             <div className="bg-gradient-hero rounded-2xl p-12 text-white shadow-xl">
-              <h3 className="text-3xl font-bold mb-4">Ready to Get Started?</h3>
+              <h3 className="text-3xl font-bold mb-4">{t("cta.title")}</h3>
               <p className="text-white/90 mb-6 max-w-xl mx-auto">
-                Start your health consultation now. Our AI assistant is available 24/7 to help you.
+                {t("cta.description")}
               </p>
               <Button 
                 onClick={() => setShowChat(true)}
@@ -170,7 +175,7 @@ const Index = () => {
                 className="bg-white text-primary hover:bg-white/90 shadow-lg text-lg px-8 py-6 h-auto"
               >
                 <Clock className="mr-2 h-5 w-5" />
-                Begin Consultation Now
+                {t("cta.button")}
               </Button>
             </div>
           </section>
@@ -182,7 +187,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border/50 bg-card/50 backdrop-blur-sm mt-16">
         <div className="container mx-auto px-4 py-8 text-center text-sm text-muted-foreground">
-          <p>© 2024 HealthMate AI. For informational purposes only. Not a substitute for professional medical advice.</p>
+          <p>{t("footer.copyright")}</p>
         </div>
       </footer>
     </div>
