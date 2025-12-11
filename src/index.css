@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 200 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 15% 15%;
+
+    --primary: 186 85% 42%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 186 75% 65%;
+    --primary-glow: 186 80% 55%;
+
+    --secondary: 152 75% 50%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --secondary-light: 152 65% 70%;
+
+    --accent: 12 88% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 200 20% 96%;
+    --muted-foreground: 200 10% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Women's Health Theme Colors */
+    --women-rose: 350 70% 60%;
+    --women-rose-light: 350 65% 75%;
+    --women-lavender: 280 45% 65%;
+    --women-lavender-light: 280 40% 80%;
+    --women-blush: 10 75% 75%;
+    --women-peach: 25 85% 75%;
+    --women-warning: 35 90% 55%;
+    --women-alert: 0 75% 60%;
+
+    --border: 200 15% 90%;
+    --input: 200 15% 92%;
+    --ring: 186 85% 42%;
+
+    --radius: 1rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(186 85% 42%), hsl(186 80% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(152 75% 50%), hsl(152 65% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(186 85% 42%) 0%, hsl(152 75% 50%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(200 20% 98%) 100%);
+    --gradient-women: linear-gradient(135deg, hsl(350 70% 60%) 0%, hsl(280 45% 65%) 100%);
+    --gradient-women-soft: linear-gradient(180deg, hsl(350 65% 97%) 0%, hsl(280 40% 97%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(186 85% 42% / 0.1);
+    --shadow-md: 0 4px 16px -4px hsl(186 85% 42% / 0.15);
+    --shadow-lg: 0 8px 32px -8px hsl(186 85% 42% / 0.2);
+    --shadow-glow: 0 0 40px hsl(186 80% 55% / 0.3);
+    --shadow-women: 0 0 40px hsl(350 70% 60% / 0.25);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 200 30% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 200 25% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 200 25% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 186 85% 42%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 186 75% 55%;
+    --primary-glow: 186 80% 48%;
+
+    --secondary: 152 75% 45%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --secondary-light: 152 65% 60%;
+
+    --accent: 12 88% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 200 20% 15%;
+    --muted-foreground: 200 10% 65%;
+
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 20% 20%;
+    --input: 200 20% 18%;
+    --ring: 186 85% 42%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
