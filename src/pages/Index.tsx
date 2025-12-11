@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Heart, MessageCircle, Image as ImageIcon, Mic, Shield, Clock } from "lucide-react";
+import { Heart, MessageCircle, Image as ImageIcon, Mic, Shield, Clock, Flower2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import ChatInterface from "@/components/ChatInterface";
 import { Button } from "@/components/ui/button";
 
@@ -20,12 +21,20 @@ const Index = () => {
               <p className="text-xs text-muted-foreground">Your Healthcare Companion</p>
             </div>
           </div>
-          <Button 
-            onClick={() => setShowChat(true)}
-            className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-md"
-          >
-            Start Chat
-          </Button>
+          <div className="flex items-center gap-3">
+            <Link to="/womens-health">
+              <Button variant="outline" className="border-women-rose/30 text-women-rose hover:bg-women-rose/10">
+                <Flower2 className="w-4 h-4 mr-2" />
+                Women's Health
+              </Button>
+            </Link>
+            <Button 
+              onClick={() => setShowChat(true)}
+              className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-md"
+            >
+              Start Chat
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -85,6 +94,29 @@ const Index = () => {
                 Describe your symptoms using voice. Our AI understands and responds naturally.
               </p>
             </div>
+          </section>
+
+          {/* Women's Health Promo */}
+          <section className="mb-16">
+            <Link to="/womens-health">
+              <div className="bg-gradient-women rounded-3xl p-8 md:p-12 text-white shadow-xl hover:shadow-women transition-all cursor-pointer group">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Flower2 className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="flex-1 text-center md:text-left">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2">Women's Health Assistant</h3>
+                    <p className="text-white/90 max-w-2xl">
+                      Specialized support for menstrual health, PCOS, hormonal skin care, and wellness. 
+                      A safe, supportive space designed just for you.
+                    </p>
+                  </div>
+                  <Button className="bg-white text-women-rose hover:bg-white/90 shadow-lg">
+                    Explore Now
+                  </Button>
+                </div>
+              </div>
+            </Link>
           </section>
 
           {/* How It Works */}
