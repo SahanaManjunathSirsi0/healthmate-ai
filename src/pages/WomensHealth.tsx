@@ -1,42 +1,45 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Heart, Flower2, Moon, Sparkles, AlertTriangle, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import WomensHealthChat from "@/components/WomensHealthChat";
 import HealthTopicCard from "@/components/HealthTopicCard";
 import AlertCard from "@/components/AlertCard";
+import AppLanguageSelector from "@/components/AppLanguageSelector";
 
 const WomensHealth = () => {
   const [showChat, setShowChat] = useState(false);
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   const healthTopics = [
     {
       id: "menstrual",
       icon: Moon,
-      title: "Menstrual Health",
-      description: "Track cycles, understand symptoms, and get personalized insights about your period health.",
+      title: t("women.topics.menstrual.title"),
+      description: t("women.topics.menstrual.description"),
       color: "rose" as const,
     },
     {
       id: "pcos",
       icon: Sparkles,
-      title: "PCOS Support",
-      description: "Understand PCOS indicators, manage symptoms, and get lifestyle recommendations.",
+      title: t("women.topics.pcos.title"),
+      description: t("women.topics.pcos.description"),
       color: "lavender" as const,
     },
     {
       id: "skin",
       icon: Flower2,
-      title: "Hormonal Skin Care",
-      description: "Address acne, dryness, and other skin issues related to hormonal changes.",
+      title: t("women.topics.skin.title"),
+      description: t("women.topics.skin.description"),
       color: "peach" as const,
     },
     {
       id: "wellness",
       icon: Heart,
-      title: "General Wellness",
-      description: "Nutrition, exercise, mental health, and holistic well-being guidance.",
+      title: t("women.topics.wellness.title"),
+      description: t("women.topics.wellness.description"),
       color: "blush" as const,
     },
   ];
@@ -62,17 +65,20 @@ const WomensHealth = () => {
                 <Flower2 className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-foreground">Women's Health</h1>
-                <p className="text-xs text-muted-foreground">Your Wellness Companion</p>
+                <h1 className="text-xl font-bold text-foreground">{t("women.header.title")}</h1>
+                <p className="text-xs text-muted-foreground">{t("women.header.subtitle")}</p>
               </div>
             </div>
           </div>
-          <Button 
-            onClick={() => setShowChat(true)}
-            className="bg-gradient-women hover:opacity-90 transition-opacity shadow-md text-white"
-          >
-            Start Chat
-          </Button>
+          <div className="flex items-center gap-3">
+            <AppLanguageSelector variant="women" />
+            <Button 
+              onClick={() => setShowChat(true)}
+              className="bg-gradient-women hover:opacity-90 transition-opacity shadow-md text-white"
+            >
+              {t("header.startChat")}
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -86,19 +92,18 @@ const WomensHealth = () => {
               </div>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-              Caring for <span className="text-transparent bg-clip-text bg-gradient-women">Your Well-being</span>
+              {t("women.hero.title")} <span className="text-transparent bg-clip-text bg-gradient-women">{t("women.hero.titleHighlight")}</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Get personalized guidance on menstrual health, PCOS, hormonal skin care, and overall wellness. 
-              We're here to support you every step of the way.
+              {t("women.hero.description")}
             </p>
           </section>
 
           {/* Alert Banner */}
           <AlertCard 
             type="info"
-            title="We're Here for You"
-            message="This assistant provides general wellness guidance. For serious symptoms, always consult a healthcare professional."
+            title={t("women.alerts.info.title")}
+            message={t("women.alerts.info.message")}
           />
 
           {/* Health Topics */}
@@ -120,8 +125,8 @@ const WomensHealth = () => {
           <section className="mb-12">
             <AlertCard 
               type="warning"
-              title="When to Seek Immediate Help"
-              message="Severe abdominal pain, heavy bleeding, fainting, high fever, or sudden vision changes require immediate medical attention. Don't wait – visit a doctor or emergency room."
+              title={t("women.alerts.warning.title")}
+              message={t("women.alerts.warning.message")}
               icon={AlertTriangle}
             />
           </section>
@@ -129,10 +134,9 @@ const WomensHealth = () => {
           {/* Quick Start CTA */}
           <section className="text-center">
             <div className="bg-gradient-women rounded-3xl p-12 text-white shadow-xl">
-              <h3 className="text-3xl font-bold mb-4">Ready to Talk?</h3>
+              <h3 className="text-3xl font-bold mb-4">{t("women.cta.title")}</h3>
               <p className="text-white/90 mb-6 max-w-xl mx-auto">
-                Share your concerns in your own words. Our AI assistant provides supportive, 
-                judgment-free guidance tailored to your needs.
+                {t("women.cta.description")}
               </p>
               <Button 
                 onClick={() => setShowChat(true)}
@@ -140,7 +144,7 @@ const WomensHealth = () => {
                 className="bg-white text-women-rose hover:bg-white/90 shadow-lg text-lg px-8 py-6 h-auto"
               >
                 <Heart className="mr-2 h-5 w-5" />
-                Begin Your Consultation
+                {t("women.cta.button")}
               </Button>
             </div>
           </section>
@@ -158,7 +162,7 @@ const WomensHealth = () => {
       {/* Footer */}
       <footer className="border-t border-women-rose-light/30 bg-card/50 backdrop-blur-sm mt-16">
         <div className="container mx-auto px-4 py-8 text-center text-sm text-muted-foreground">
-          <p>© 2024 HealthMate AI - Women's Health. For informational purposes only. Not a substitute for professional medical advice.</p>
+          <p>{t("women.footer.copyright")}</p>
         </div>
       </footer>
     </div>
