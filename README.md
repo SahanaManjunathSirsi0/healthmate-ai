@@ -1,95 +1,44 @@
-<<<<<<< HEAD
-# WellnessTree AI / HealthMate AI
+# WellnessTree AI (HealthMate AI)
 
-A multilingual AI-powered healthcare assistant focusing on women’s health. Built with React, Vite, Tailwind, shadcn-ui, and TypeScript.
+A multilingual AI-powered healthcare assistant focused on **women’s health**.  
+Built with **React, Vite, Tailwind CSS, shadcn-ui, and TypeScript**.
 
-## Features
-- Women's Health Module (Menstrual Health, PCOS, Hormonal Skin Care, Wellness)
-- AI Chat with text & voice support
-- Image analysis for skin issues
-- Multi-language support (English, Kannada, Hindi)
-- Soft feminine UI with Tailwind CSS and shadcn UI
+## 🌸 Features
 
-## Live Demo
-Check the live app here: [https://wellnesstree-ai.lovable.app](https://wellnesstree-ai.lovable.app)
+- Women’s Health Module  
+  - Menstrual Health  
+  - PCOS Support  
+  - Hormonal Skin Care  
+  - General Wellness
+- AI Chat with **text & voice support**
+- **Image analysis** for skin-related issues
+- **Multilingual support**: English, Kannada, Hindi
+- Soft, feminine UI using Tailwind CSS & shadcn-ui
 
-## Running Locally
-1. Clone the repository:
+## 🚀 Live Demo
+
+👉 https://wellnesstree-ai.lovable.app
+
+## 🛠 Tech Stack
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn-ui
+- Lovable AI
+
+## 🖥 Running Locally
 
 ```bash
+# Clone the repository
 git clone https://github.com/SahanaManjunathSirsi0/healthmate-ai.git
-=======
-# Welcome to your Lovable project
 
-## Project info
+# Navigate to the project directory
+cd healthmate-ai
 
-**URL**: https://lovable.dev/projects/e7981853-6b4a-4a2c-9634-dfa6fc520b60
+# Install dependencies
+npm install
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/e7981853-6b4a-4a2c-9634-dfa6fc520b60) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/e7981853-6b4a-4a2c-9634-dfa6fc520b60) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
->>>>>>> b79d6e3f8fa728038d01e95ef2fa27c173698da5
