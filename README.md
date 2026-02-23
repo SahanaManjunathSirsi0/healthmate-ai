@@ -31,6 +31,9 @@ Built with **React, Vite, Tailwind CSS, shadcn-ui, and TypeScript**.
 ## 🖥 Running Locally
 
 ```bash
+
+
+Developed using React TypeScript and AI assisted development tools
 # Clone the repository
 git clone https://github.com/SahanaManjunathSirsi0/healthmate-ai.git
 
